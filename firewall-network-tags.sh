@@ -1,0 +1,11 @@
+gcloud compute firewall-rules create allow-ssh-custom \
+    --network mi-vpc-curso \
+    --action allow \
+    --direction INGRESS \
+    --rules tcp:22 \
+    --source-ranges 0.0.0.0/0 \
+    --target-tags web-server
+
+    # Lo necesitamos en una sola línea:
+
+    gcloud compute firewall-rules create allow-ssh-custom --network mi-vpc-curso --action allow --direction INGRESS --rules tcp:22 --source-ranges 0.0.0.0/0 --target-tags web-server
